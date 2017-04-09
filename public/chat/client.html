@@ -1,0 +1,93 @@
+<html>
+<head>
+	<title>Chat Tool</title>
+	<style>
+		<style>
+		#outer { position: fixed;
+			bottom: 40px;
+			width: 1800px;
+			height: 1000px;
+			border : 2px hidden black ;
+		    border-radius: 5px;
+			width:1900px;
+			height:800px;
+			padding:0px;
+			
+			}
+		#inner { position: fixed;
+			bottom: 40px;
+			width: 1800px;
+			height: 1000px;
+			border : 2px solid black ;
+			border-radius: 5px;
+			width:1900px;
+			height:800px;
+			overflow-y:scroll;
+			}
+		#mssg { position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 1800px;
+			height: 35px;
+			border: 1px solid black;
+		}
+		#snd { position: fixed;
+			bottom: 0;
+			right: 0;
+			height: 35px;
+			width: 115px;
+
+
+		}
+	</style>
+	
+	</style>
+	
+	
+	<script>
+		function init()
+		{
+			ev=new EventSource("server.php");
+			ev.addEventListener("Data",populate,true);
+			txt=document.getElementById("mssg")
+			chatbox=document.getElementById("inner")
+			sd=document.getElementById("snd");
+			sd.onclick=Send;
+		}
+
+		function populate(event)
+		{	
+			chatbox.innerHTML+="FRIEND : "+event.data+"<br/>";
+			
+		}
+		function Send()
+		{
+			chatbox.innerHTML+="ME : "+txt.value+"<br/>";
+			txt.innerHTML = " ";
+			xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=Update;
+			xhr.open("GET","update1.php?data="+txt.value,true);
+			xhr.send();
+		}
+		function Update()
+		{
+			if(xhr.readyState==4 && xhr.status==200)
+			{
+				//Do nothing
+			}
+		}
+	
+	</script>
+</head>
+<body onload="init()">
+<div align="left">
+
+<div id="outer" align="left">
+<div id="inner">
+</div>
+<input type="text" id ="mssg" /><input type="button" value="send" id="snd"/> 
+</div>
+</div>
+
+</body>
+</html>
