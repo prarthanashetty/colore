@@ -40,7 +40,7 @@ app.get('/', function(req, res){
 });
 
 app.post('/login', function(req, res){
-console.log("in login");
+//console.log("in login");
   if(!req.body.username){
     res.status(400).send("email is required");
     return;
@@ -52,11 +52,11 @@ console.log("in login");
   connection.query("SELECT * from users where email = ? and password = ?", [req.body.username, req.body.password], function(err, result, fields){
 //  connection.end();
   var resLen = result.length;
-  console.log(resLen);
+ // console.log(resLen);
   if(!err && resLen==1) {
       console.log("logged in");
       var token = jwt.sign({username : req.body.username}, "webtech2");
-      console.log(token);
+      //console.log(token);
       res.status(200).json(token);
   }
   else if(err || resLen==0) console.log("login error");

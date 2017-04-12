@@ -28,17 +28,40 @@ const db = require('mysql');
       });
     },
 
-    logmein : function(callback, username, password){
-      connection.query("SELECT * from users where name = ? and password = ?", [username, password], function(err, result, fields){
+    logmein : function(username, password, callback){
+      connection.query("SELECT * from users where email = ? and password = ?", [username, password], function(err, result, fields){
     //  connection.end();
       var resLen = result.length;
       //console.log(resLen);
       if(!err && resLen==1) {
-          console.log("logged in");
-          var token = jwt.sign({username : req.body.username}, "webtech2");
-          res.status(200).json(token);
+          return callback(200);
       }
-      else if(err || resLen==0) console.log("login error");
+      else if(err || resLen==0) return callback(409);
         });
-    }
+    },
+
+    join : function(username, password, callback){
+      connection.query("INSERT INTO `users` (`userId`, `email`, `password`) VALUES (NULL, ?, ?);", [username, password], function(err, result, fields){
+    //  connection.end();
+
+      //console.log(resLen);
+      if(!err) {
+          return callback(200);
+      }
+      else if(err) return callback(409);
+        });
+
+  },
+
+  lookup : function(username, callback){
+      connection.query("SELECT * from users where email=?", [username], function(err, result, fields){
+        if(!result.length && !err){
+            return callback(200);
+        }
+        else {
+          return callback(210);
+        }
+      });
+  }
+
 }

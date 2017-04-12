@@ -149,7 +149,7 @@ img.hover-shadow {
   <script src="bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
 </head>
 
-<body style="background-color:black" onload="init()">
+<body style="background-color:black" onload="check()">
 
 <nav class="navbar navbar-default" style="color:grey">
   <div class="container-fluid">
@@ -159,8 +159,9 @@ img.hover-shadow {
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Gallery</a></li>
       <li><a href="#">Chat</a></li>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">About</a></li>
+      <li onclick="out()"><a href="#">Logout</a></li>
       <li><a href="index1.html">RSS</a></li>
     </ul>
   </div>
@@ -172,40 +173,40 @@ img.hover-shadow {
 
 <div class="row">
   <div class="column gif">
-    
+
   </div>
   <div class="column gif">
-      
+
   </div>
   <div class="column gif">
-    
+
   </div>
   <div class="column gif">
-    
+
   </div>
   <div class="column gif">
-    
+
   </div>
   <div class="column gif">
-    
+
   </div>
   <div class="column gif">
-    
+
   </div>
   <div class="column gif">
-    
+
   </div>
   <div class="column gif">
-    
+
   </div>
   <div class="column gif">
-    
+
   </div>
   <div class="column gif">
-    
+
   </div>
   <div class="column gif">
-    
+
   </div>
 </div>
 
@@ -227,7 +228,7 @@ img.hover-shadow {
       <div class="numbertext">3 / 10</div>
       <img src="img/003.jpg" style="width:100%">
     </div>
-    
+
     <div class="mySlides">
       <div class="numbertext">4 / 10</div>
       <img src="img/004.jpg" style="width:100%">
@@ -272,7 +273,7 @@ img.hover-shadow {
       <div class="numbertext">12 / 12</div>
       <img src="img/012.jpg" style="width:100%">
     </div>
-    
+
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
@@ -324,12 +325,24 @@ img.hover-shadow {
 </div>
 
 <script>
+console.log("session storage : " +sessionStorage.token);
+
+function check(){
+
+  if(sessionStorage.token=="undefined"){window.alert("please login first");window.location = "http://localhost:3000/";}
+  else init()
+}
+
+function out(){
+  sessionStorage.token = "undefined";
+  window.location = "http://localhost:3000/";
+}
 
 function init(){
   //window.alert("in init");
       xhr = new XMLHttpRequest();
       xhr.onreadystatechange = showContent;
-      xhr.open("GET", "loader.txt", true);
+      xhr.open("GET", "txt/loader.txt", true);
       xhr.send();
 }
 
@@ -337,7 +350,7 @@ function showContent(){
   if(xhr.readyState==4 && xhr.status==200)
   {
     var a = document.getElementsByClassName("gif");
-  
+
     var x = xhr.responseText;
     //window.alert(xhr.responseText);
     var y = x.split(";");
@@ -355,7 +368,7 @@ function showContent(){
 function getPic1(){
   xhr1 = new XMLHttpRequest();
   xhr1.onreadystatechange = showPic1;
-  xhr1.open("GET", "pics.txt", true);
+  xhr1.open("GET", "txt/pics.txt", true);
   xhr1.send();
 }
 
@@ -411,6 +424,6 @@ function showSlides(n) {
 
 
 </script>
-    
+
 </body>
 </html>
