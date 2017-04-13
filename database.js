@@ -20,7 +20,7 @@ const db = require('mysql');
     getusername : function(callback){
       connection.query("SELECT name from users", function(err, result, fields){
         //hello = result;
-      connection.end();
+      //connection.end();
       if(!err) {
         return callback(200);
       }
@@ -61,6 +61,13 @@ const db = require('mysql');
         else {
           return callback(210);
         }
+      });
+  },
+
+  broadcast : function(message, callback){
+      connection.query("INSERT INTO `broadcast` (`ID`, `message`, `timestamp`) VALUES (NULL, ?, CURRENT_TIMESTAMP);", [message], function(err, result, fields){
+          if(err) {throw err;console.log("in error db");}
+          else if(!err) {console.log("db action successful");return callback(200);}
       });
   }
 

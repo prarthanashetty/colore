@@ -7,6 +7,8 @@ const ejwt = require('express-jwt');
 const jwt = require('jsonwebtoken');
 const database = require('./database.js');
 
+const cnc = [];
+
 database.dbInit();
 
 app.listen(port, function(){
@@ -95,4 +97,38 @@ app.post('/lookup', function(req, res){
       }
   });
 
+});
+
+app.get('/notif', function(req, res){
+  console.log("client connected");
+  res.writeHead(200, {
+    'Content-Type' : 'text/event-stream',
+    'Cache-Control' : 'no-cache',
+    'Connection' : 'keep-alive'
+  });
+  cnc.push(res);
+//  res.end();
+});
+
+app.get('/broadcast', function(req, res){
+//  console.log(req.query.message);
+  database.broadcast(req.query.message, function(status){
+    if(status==200)
+    {
+        for(i=0; i<cnc.length; i++)
+        {
+          console.log("in broadcast");
+          cnc[i].write("event: getNotif\n");
+          console.log("after write");
+          cnc[i].write("data: "+ req.query.message + "\n\n");
+        }
+        console.log(cnc.length);
+        res.sendStatus(200);
+
+
+  //      res.end();
+    }
+
+    else if(status==403) res.sendStatus(403);
+  });
 });

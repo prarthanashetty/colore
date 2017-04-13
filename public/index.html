@@ -278,9 +278,32 @@
     <!-- Theme JavaScript -->
     <script src="bootstrap-3.3.7/dist/js/creative.min.js"></script>
     <script>
+    var source;
       function init(){
-        sessionStorage.token="undefined";
+
+  esource();
       }
+
+      function esource(){
+
+                 source = new EventSource('/notif');
+                console.log("in events");
+                source.addEventListener('getNotif', function(e){
+                  console.log("in event listener");
+                  var x = {
+                    message : e.data
+                  }
+                  console.log("hello");
+                  console.log(x);
+
+                  window.alert(x.message);
+
+                }, false);
+
+      }
+
+
+
     </script>
 
 </body>

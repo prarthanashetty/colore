@@ -1,0 +1,13 @@
+<html>
+  <body>
+    <h4>WHAT DO YOU WANNA TELL YOUR PEEPS? </h4>
+    <input type="text" id="msg"/><br/><br/>
+    <input type="button" id="btn"/ value="broadcast!" onclick="send()">
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+      function send(){
+        $.get('/broadcast', {message : document.getElementById("msg").value});
+      }
+    </script>
+  </body>
+</html>
