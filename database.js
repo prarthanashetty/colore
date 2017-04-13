@@ -69,6 +69,15 @@ const db = require('mysql');
           if(err) {throw err;console.log("in error db");}
           else if(!err) {console.log("db action successful");return callback(200);}
       });
+  },
+
+  getNotifications : function(callback){
+      connection.query("SELECT * FROM `broadcast`;", function(err, result, fields){
+        console.log("in getNotifications");
+        console.log(result.length);
+        if(err) {throw err;console.log("error in notifications");}
+        else if(!err) {console.log("notification action successful");return callback(result, 200);}
+    });
   }
 
 }

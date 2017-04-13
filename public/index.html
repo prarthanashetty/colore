@@ -34,7 +34,7 @@
 
 </head>
 
-<body id="page-top" onload="init()">
+<body id="page-top" onload="init()" style="background-color:#E1E9E9">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -43,27 +43,27 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Colore</a>
+                <a class="navbar-brand page-scroll" href="#page-top" style="color:black">Colore</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about" style="color:black">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="gallery2.html">Gallery</a>
+                        <a class="page-scroll" href="gallery2.html" style="color:black">Gallery</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Chat</a>
+                        <a class="page-scroll" href="#portfolio" style="color:black">Chat</a>
                     </li>
 
                     <li>
-                        <a class="page-scroll" href="login.html">Login</a>
+                        <a class="page-scroll" href="login.html" style="color:black">Login</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="index1.html">RSS</a>
+                        <a class="page-scroll" href="index1.html" style="color:black">RSS</a>
                     </li>
                 </ul>
             </div>
@@ -75,13 +75,21 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Beyond Reality.</h1>
+                <h1 id="homeHeading" style="color:black">Beyond Reality.</h1>
                 <hr>
-                <p>"Art is the only way to run away without leaving home" -Twalya Tharp</p>
+                <p style="color:black"><strong>"Art is the only way to run away without leaving home" -Twalya Tharp</strong></p>
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
             </div>
         </div>
     </header>
+
+    <div class="container" style="max-height : 300px;overflow : auto;" id="ctr">
+  <h2>BROADCAST</h2>
+  <div class="alert alert-info">
+    <strong>WELCOME TO COLORIE!! ANY WORDS FROM THE AUTHOR WILL BE NOTIFIED HERE!!</strong>
+  </div>
+
+</div>
 
     <section class="bg-primary" id="about">
         <div class="container">
@@ -280,8 +288,19 @@
     <script>
     var source;
       function init(){
+        $.get('http://localhost:3000/notific', function(data){
+            console.log("in init");
+            console.log(data.length);
+            var cont = document.getElementById("ctr");
+            for(k in data){
+              var divi = document.createElement("div");
+              divi.className = "alert alert-info";
+              divi.innerHTML = data[k].message;
+              cont.insertBefore(divi, cont.childNodes[2]);
+            }
+        });
 
-  esource();
+        esource();
       }
 
       function esource(){
@@ -293,10 +312,17 @@
                   var x = {
                     message : e.data
                   }
-                  console.log("hello");
-                  console.log(x);
+                  // console.log("hello");
+                  // console.log(x);
+                  //
+                  // window.alert(x.message);
+                  var cont = document.getElementById("ctr");
+                  var divi = document.createElement("div");
+                  divi.className = "alert alert-info";
+                  divi.innerHTML = x.message;
+                  cont.insertBefore(divi, cont.childNodes[2]);
 
-                  window.alert(x.message);
+
 
                 }, false);
 

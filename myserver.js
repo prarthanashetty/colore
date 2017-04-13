@@ -132,3 +132,10 @@ app.get('/broadcast', function(req, res){
     else if(status==403) res.sendStatus(403);
   });
 });
+
+app.get('/notific', function(req, res){
+    database.getNotifications(function(result, status){
+        if(status==200) res.send(result);
+        else res.sendStatus(status);
+    });
+});

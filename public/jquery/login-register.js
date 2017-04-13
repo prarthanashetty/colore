@@ -146,6 +146,7 @@ function rec(){
       {
         document.getElementById("exists").style.display = "none";
         document.getElementById("notexists").style.display = "block";
+        
       }
       else if(xhr.responseText=="nope"){
         document.getElementById("notexists").style.display = "none";
