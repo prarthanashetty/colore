@@ -1,0 +1,2 @@
+C:\xampp\htdocs\colorie\obj\Debug\NodejsApp1.njsprojResolveAssemblyReference.cache
+C:\xampp\htdocs\colorie\bin\Microsoft.NodejsTools.WebRole.dll

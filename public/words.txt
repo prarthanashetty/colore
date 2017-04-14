@@ -1,0 +1,45 @@
+<section id="about" class="section">
+<h2>Let's Dive Deeper</h2>
+
+<p>Now, there may be gallery and museum goers to visit these places to see pleasant pictures or sculptures, but I don't think any artist of merit ever made that their purpose or goal.</p>
+
+<p>To cut to the chase, art is something that is made to be reflected upon in a particular way. It's about a mode of perception and apprehension, and that is what Duchamp laid bare with his urinal. A urinal in a toilet is for pissing in, a urinal in a gallery is for 'thinking about'.</p>
+
+<p>That's a general definition that might be useful. Personally, I'd go one step further, but I'm not 100% clear on the details. Nevertheless, I'll have a go to see if it makes sense to anyone. What Duchamp did redefined art and in many ways it was a brilliant move. But for me it was a pure act of criticism. It was an analytical manoeuvre.</p>
+<p> Art has always possessed the ability to critique things and it has often been at the core of its content and purpose. But only until recently (since Duchamp) has art been produced which is little more than a critique - i.e. visualised statements. We can analyse the crap out of one of Picasso's cubist paintings but there is always something more there, something ineffable, but which is rooted in the physical construct - in this specific case, it's pictorial space, texture, composition, colour, and form which produce content that you can just about, or not, describe.</p>
+<p> You can write the urinal - it's an idea that makes you think and that can be interpreted in many ways, but this idea is in no way is the product of the physical construct, the form of the urinal itself. It is not that Duchamp didn't actually make anything, it's that he didn't do anything to it. He simply illustrated an idea - and that is the term that often comes to mind when looking at contemporary art - illustration.</p>
+<p> A recent gallery piece, in Moscow I think, was based on 'sleeping beauty' and consisted of several sleeping women who were contractually obliged to marry the person that kissed them if when kissed they opened their eyes. Nice idea, no doubt, but I doubt that there's more to it than those few words just used to describe it. Maybe I got it wrong in this case, but I've given up trying after simply finding nothing but banal one-liners after wasted efforts of concentration trying to find something subtle, other, double-sided, or ineffable.</p>
+<p>
+I would draw the line here...I don't think it's art at that point; perhaps it's just another form of cultural production, but it's sufficiently different from what was produced in the previous several hundred years that went by the name of art. I just don't know what to call it.</p>
+
+
+</section>
+
+
+
+<section id="photos" class="section">
+<h2>Can art be defined?</h2>
+
+
+<p>With the difficulties faced in defining art with an appropriate scope, one has to question the possibility of defining art at all. In his The Role of Theory in Aesthetics, Morris Weitz argued that any real definition of art would fail because works of art are related to one another like a family rather than by some rigid set of properties. This family resemblance relationship (taken from Wittgenstein) proposes that groups given a common name and thought to connected by a common, essential feature are, rather, connected by a network of overlapping and criss-crossing features. Much like a family whose shared characteristics like: build, height, eye color, facial features, overlap and criss-cross throughout their family tree.</p>
+<p>Let's consider Wittgenstein's example, games, which exhibit this familial resemblance to one another. There are many kinds of games: ball games, card games, board games, and so on, that fail to be united by a ubiquitous trait. When asked to define what makes something a game one might say “It is a competition with winners and losers.” While this may work for games like chess, it doesn't seem to work for games like catch or games with a single participant. Another may offer skill as a definition, but we can turn to them with games like rock-paper-scissors or Russian roulette. For any uniting feature offered, there will be a game that lacks this feature (or a non-game that has this feature). To know what a game is not to have a real definition of it, but be able to take new examples and being able to determine whether they are games or not.</p>
+<p> Art shares this quality of Weitz proposes an open definition of art where, upon experiencing a new art-candidate, one has to make a decision whether or not it counts on art based on its similarities to past artworks. In doing so the number of properties that one associates with art is, which accounts for the expansion of art from the fine arts to the multitude of art forms accepted today. He concludes that while theories of art fail to provide a real definition of art, they retain value as suggestions to reconsider what we consider in deciding whether something is art, and can be seen as reactionary pieces to the times.</p>
+<p>Weitz provides quite a compelling challenge to any theory of art, which combined with the challenge of placing artworks like Duchamp's Fountain and Warhol's Brillo Boxes, led aestheticians to definitions of art that of two major kinds: functional (being defined by what it does or is intended to do) and relational (being defined by its standing to other things). These approaches hope to avoid the issues of past definitions by focusing on non-perceptual properties of art rather than something percerptual like form.</p>
+
+
+
+</section>
+
+<section id="contact" class="section">
+<h2>New Theories of Art</h2>
+
+<p>Most functional definitions of art deal aesthetic properties as being central to art's function. A popular functionalist theory of art is Monroe Beardsley's intentional account; he defines art as an arrangement intended to be capable of giving an aesthetic experience made valuable by its aesthetic qualities (or an arrangement that belongs to a class of arrangements generally intended to have said capability).</p>
+<p>This view seems to fall into the same traps as earlier definitions of art in that it can be said to be too wide and too narrow. The functionalist has some responses to this. To being to narrow the functinoalist can respond with a wider definition of aesthetic properties that includes non-perceptual qualities that would give conceptual piece like those of Warhol's and Duchamp's proper due as art. The functionalist could also double down and claim that pieces these do not constitute art, but are comments on art. In response to the functionalist account being too broad, the functionalist can dismiss things like nice cars or elegant mathematical equations using a distinction between first and secondary functions and their effects on art status.</p>
+<p>Of the relational theories of art there are two major strains, procedural (how art is given art-status) and historical (how art is related to past art).</p>
+<p>The popular proceduralist theory of art is George Dickie's institutional theory of art, which states that an artwork is an artifact that is presented by the artist to an Artworld audience. He later revised this theory into a set of interlocking definitions: An artist is someone who knowing creates art. Art is an artifact of a kind to be presented to an Artworld public. A public is a set of persons who are prepared to (partially) understand an object that is presented to them. The Artworld is the totality of all Artworld systems. An Artworld system is a framework for the presentation of a of art by an artist to an Artworld public.</p>
+<p>It is obvious that the second argument is circular, but Dickie's argues that it still positively represents art and the manner in which it exists. The circularity of the argument is a reflection of art's nature. Another common objection to Dickie's definition is that this Artworld social structure is hard to distinguish from other similar social structures, making it fail to properly distinguish art from non-art.
+The historical theory of art defines something as art if it stands in a certain relation to past artworks. Proposed relations have been intentional (present art has been made with the intent as being regarded in the same way as past art), functionalist (present art succeeds in performing one of the functions of an established art form), or stylistic (present art has been made in a similar style as past art).</p>
+
+
+<br><br><br>
+</section>

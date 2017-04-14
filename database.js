@@ -31,10 +31,13 @@ const db = require('mysql');
     logmein : function(username, password, callback){
       connection.query("SELECT * from users where email = ? and password = ?", [username, password], function(err, result, fields){
     //  connection.end();
+    //  console.log("in logmein db");
       var resLen = result.length;
       //console.log(resLen);
       if(!err && resLen==1) {
-          return callback(200);
+      //  console.log("email id of user");
+      //  console.log(result[0].email);
+          return callback(result[0].email, 200);
       }
       else if(err || resLen==0) return callback(409);
         });
@@ -67,16 +70,16 @@ const db = require('mysql');
   broadcast : function(message, callback){
       connection.query("INSERT INTO `broadcast` (`ID`, `message`, `timestamp`) VALUES (NULL, ?, CURRENT_TIMESTAMP);", [message], function(err, result, fields){
           if(err) {throw err;console.log("in error db");}
-          else if(!err) {console.log("db action successful");return callback(200);}
+          else if(!err) {return callback(200);}
       });
   },
 
   getNotifications : function(callback){
       connection.query("SELECT * FROM `broadcast`;", function(err, result, fields){
-        console.log("in getNotifications");
-        console.log(result.length);
+      //  console.log("in getNotifications");
+      //  console.log(result.length);
         if(err) {throw err;console.log("error in notifications");}
-        else if(!err) {console.log("notification action successful");return callback(result, 200);}
+        else if(!err) {return callback(result, 200);}
     });
   }
 

@@ -6,8 +6,10 @@ const user = require('./users.json');
 const ejwt = require('express-jwt');
 const jwt = require('jsonwebtoken');
 const database = require('./database.js');
+const fs = require('fs');
 
 const cnc = [];
+var buff =  new Buffer(1024);
 
 database.dbInit();
 
@@ -36,11 +38,13 @@ app.post('/login', function(req, res){
     return;
   }
 
-  database.logmein(req.body.username, req.body.password, function(status){
+  database.logmein(req.body.username, req.body.password, function(name,status){
     if(status=='200'){
-      console.log("logged in");
-      var token = jwt.sign({username : req.body.username}, "webtech2");``
-      res.status(200).json(token);
+    //  console.log("logged in");
+      var token = jwt.sign({username : req.body.username}, "webtech2");
+    //  console.log("end of logmein");
+    //  console.log(name);
+      res.status(200).send({tok : token, nam : name});
     }
     else {
       console.log("login error");
@@ -100,7 +104,7 @@ app.post('/lookup', function(req, res){
 });
 
 app.get('/notif', function(req, res){
-  console.log("client connected");
+  //console.log("client connected");
   res.writeHead(200, {
     'Content-Type' : 'text/event-stream',
     'Cache-Control' : 'no-cache',
@@ -117,12 +121,12 @@ app.get('/broadcast', function(req, res){
     {
         for(i=0; i<cnc.length; i++)
         {
-          console.log("in broadcast");
+        //  console.log("in broadcast");
           cnc[i].write("event: getNotif\n");
-          console.log("after write");
+        //  console.log("after write");
           cnc[i].write("data: "+ req.query.message + "\n\n");
         }
-        console.log(cnc.length);
+    //    console.log(cnc.length);
         res.sendStatus(200);
 
 
@@ -138,4 +142,29 @@ app.get('/notific', function(req, res){
         if(status==200) res.send(result);
         else res.sendStatus(status);
     });
+});
+
+app.get('/getMore', function(req, res){
+    var x = req.query.count;
+    //console.log("count is "+x);
+    var y = buff.length*x;
+    fs.open('words.txt', 'r+', function(err, fd){
+        if(err) res.sendStatus(403);
+      //  console.log("file opened successfully");
+      //  console.log("now reading file");
+        fs.read(fd, buff,0, buff.length, y,function(err, bytes){
+            if(err) console.log("read error");
+          //  console.log("bytes read" + bytes);
+
+            if(bytes>0){
+              res.send(buff.slice(0, bytes).toString());
+            }
+
+            fs.close(fd, function(err){
+                if(err)console.log("closing failed");
+                //console.log("closing successfull");
+            });
+        });
+    });
+
 });

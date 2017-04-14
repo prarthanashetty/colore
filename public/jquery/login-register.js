@@ -69,8 +69,9 @@ function loginAjax(){
     var x = document.getElementById("emailin").value;
     var y = document.getElementById("passwordin").value;
 /*   Simulate error message from the server   */
-    $.post("/login", {"username" : x, "password" : y}).done(function(msg){sessionStorage.token = msg; window.location='http://localhost:3000/gallery2.html'}).fail(function(a,b,c){});
+    $.post("/login", {"username" : x, "password" : y}).done(function(msg){sessionStorage.token = msg.tok;sessionStorage.name=msg.nam; window.location='http://localhost:3000/gallery2.html'}).fail(function(a,b,c){});
     console.log(sessionStorage.token);
+    console.log(sessionStorage.name);
     if(sessionStorage.token=='undefined') shakeModal();
 }
 
@@ -146,7 +147,7 @@ function rec(){
       {
         document.getElementById("exists").style.display = "none";
         document.getElementById("notexists").style.display = "block";
-        
+
       }
       else if(xhr.responseText=="nope"){
         document.getElementById("notexists").style.display = "none";

@@ -154,15 +154,16 @@ img.hover-shadow {
 <nav class="navbar navbar-default" style="color:grey">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Colore</a>
+      <a class="navbar-brand" href="http://localhost:3000/">Colore</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Gallery</a></li>
-      <li><a href="#">Chat</a></li>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html">About</a></li>
-      <li onclick="out()"><a href="#">Logout</a></li>
+      <li><a href="#">HOME</a></li>
+      <li><a href="artistWords.html">ARTIST'S WORDS</a></li>
+      <li class="active"><a href="index.html">GALLERY</a></li>
+      <li><a href="#">SIGNIN/UP</a></li>
+      <li><a href="#">CONTACT</a></li>
       <li><a href="index1.html">RSS</a></li>
+      <li onclick="out()"><a href="#">LOGOUT</a></li>
     </ul>
   </div>
 </nav>
@@ -326,20 +327,24 @@ img.hover-shadow {
 
 <script>
 console.log("session storage : " +sessionStorage.token);
+console.log("sessionStoraage name : ", sessionStorage.name);
 
 function check(){
 
-  if(sessionStorage.token=="undefined"){window.alert("please login first");window.location = "http://localhost:3000/";}
+  if(sessionStorage.token=="undefined"&&sessionStorage.name=="undefined"){window.alert("please login first");window.location = "http://localhost:3000/";}
   else init()
 }
 
 function out(){
   sessionStorage.token = "undefined";
+  sessionStorage.name = "undefined";
   window.location = "http://localhost:3000/";
 }
 
 function init(){
   //window.alert("in init");
+    console.log("number of sessionStoragevars are:");
+    console.log(sessionStorage.length);
       xhr = new XMLHttpRequest();
       xhr.onreadystatechange = showContent;
       xhr.open("GET", "txt/loader.txt", true);

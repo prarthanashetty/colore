@@ -50,21 +50,27 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about" style="color:black">About</a>
+                        <a class="page-scroll" href="#about" style="color:black">ABOUT</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="gallery2.html" style="color:black">Gallery</a>
+                        <a class="page-scroll" href="artistWords.html" style="color:black">ARTIST'S WORDS</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio" style="color:black">Chat</a>
+                        <a class="page-scroll" href="gallery2.html" style="color:black">GALLERY</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="login.html" style="color:black">SIGN IN/UP</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#" style="color:black">CONTACT</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#" style="color:black">RSS</a>
+                    </li>
+                    <li onclick="out()">
+                        <a class="page-scroll" href="#" style="color:black">logout</a>
                     </li>
 
-                    <li>
-                        <a class="page-scroll" href="login.html" style="color:black">Login</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="index1.html" style="color:black">RSS</a>
-                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -78,7 +84,7 @@
                 <h1 id="homeHeading" style="color:black">Beyond Reality.</h1>
                 <hr>
                 <p style="color:black"><strong>"Art is the only way to run away without leaving home" -Twalya Tharp</strong></p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <a href="#contact" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
             </div>
         </div>
     </header>
@@ -95,10 +101,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">My Inspiration</h2>
-                    <hr class="light">
-                    <p class="text-faded">Art for me is a state of happiness,my paintings and creations aren't directed towards pushing people into proposing great inner meanings,it's just supposed to make you feel something.</p>
+                    <h2 class="section-heading">A LITTLE ABOUT OURSELVES :P</h2>
 
+                    <hr class="light">
+                    <p class="text-faded">THIS IS A WEB TECHNOLOGY PROJECT WHICH GIVES US A CHANCE TO PORTRAY OUR SKILLS IN THE DOMAINS OF AJAX, COMET ETC. </p>
+                    <hr class="light">
+
+                    <p class="text-faded">MONISH S</p>
+                    <p class="text-faded">PRARTHANA SHETTY</p>
+                    <p class="text-faded">PRATHEEK B</p>
+                    <p class="text-faded">RAHUL M</p>
                 </div>
             </div>
         </div>
@@ -252,7 +264,7 @@
 
 
 
-    <section id="contact">
+    <section id="contact" id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -326,6 +338,12 @@
 
                 }, false);
 
+      }
+
+      function out(){
+        sessionStorage.token = "undefined";
+        sessionStorage.name = "undefined";
+        window.location = "http://localhost:3000/";
       }
 
 
